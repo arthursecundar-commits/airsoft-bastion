@@ -287,3 +287,18 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
   .cube{margin:-56px 16px 0;width:auto;max-width:none}
   .hero-loc{position:static;margin:18px auto 0}
 }
+
+/* ---------- booking ---------- */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#c9c4b3;cursor:pointer}
+.consent input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--yellow)}
+.seg label.taken span{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.seg label.taken span::after{content:"ocupat";display:block;font:600 10px/1 var(--hud);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;text-decoration:none}
+.btn-book{flex-basis:100%!important}
+.btn[disabled]{opacity:.6;cursor:wait}
+.book-msg{margin:12px 0 0;font:600 14px/1.4 var(--hud);min-height:0}
+.book-msg:empty{display:none}
+.book-msg.ok{padding:10px 12px;background:#dfe9c4;color:#23300f}
+.book-msg.err{padding:10px 12px;background:#f6d6d2;color:#6b1a12}
+
+[hidden]{display:none!important}

@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow">
+<title>RezervÄƒri - Bastion TGV</title>
+<meta name="theme-color" content="#11140d" />
+<link rel="icon" href="img/logo-y.png" />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css?v=9" />
+<style>
+  body{background:var(--ink)}
+  .adm{max-width:980px;margin:0 auto;padding:24px var(--gut) 80px}
+  .adm-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+  .adm-top h1{font:400 clamp(36px,6vw,56px)/1 var(--display);text-transform:uppercase}
+  .adm-top img{width:44px;height:44px}
+  .login{max-width:420px;display:grid;gap:14px;background:var(--ink-2);padding:24px;border-top:6px solid var(--yellow)}
+  .login input{min-height:50px;padding:12px 14px;background:var(--ink);color:var(--paper-2);border:1px solid #3b4430;font:16px var(--body)}
+  .bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+  .bar2 button{min-height:40px;padding:8px 12px;border:1px solid #3b4430;background:var(--ink-2);color:var(--paper-2);font:600 13px/1 var(--hud);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  .bar2 button[aria-pressed="true"]{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+  .bar2 .sp{flex:1}
+  .count{font:600 13px var(--hud);color:#9b9686;letter-spacing:.08em;text-transform:uppercase}
+  .day{margin:26px 0 10px;font:700 15px/1 var(--hud);letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+  .card{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:start;background:var(--paper-2);color:var(--ink);padding:16px 18px;margin-bottom:10px;border-left:8px solid var(--yellow)}
+  .card.confirmata{border-left-color:#4f8a2b}
+  .card.respinsa{border-left-color:#b0242e;opacity:.6}
+  .slot{font:400 30px/1 var(--display)}
+  .st{display:inline-block;margin-top:6px;padding:4px 8px;font:700 11px/1 var(--hud);letter-spacing:.1em;text-transform:uppercase;background:var(--yellow)}
+  .confirmata .st{background:#4f8a2b;color:#fff}
+  .respinsa .st{background:#b0242e;color:#fff}
+  .who{font:700 18px/1.2 var(--hud)}
+  .meta{margin:4px 0 0;font-size:14px;color:#3a4130}
+  .meta a{font-weight:700}
+  .acts{display:grid;gap:6px}
+  .acts .btn{min-height:40px;font-size:12px;padding:8px 12px}
+  .empty{color:#9b9686;padding:30px 0}
+  .err{color:#f6b3aa;font:600 14px var(--hud)}
+  @media (max-width:640px){ .card{grid-template-columns:1fr} .acts{grid-template-columns:repeat(3,1fr)} }
+</style>
+</head>
+<body>
+<main class="adm">
+  <div class="adm-top">
+    <h1>RezervÄƒri</h1>
+    <img src="img/logo-y.png" alt="Bastion TGV" />
+  </div>
+
+  <form class="login" id="login" hidden>
+    <label class="f"><span>Parola de admin</span><input type="password" id="key" autocomplete="current-password" required /></label>
+    <button class="btn btn-y" type="submit">IntrÄƒ</button>
+    <p class="err" id="loginErr"></p>
+  </form>
+
+  <section id="app" hidden>
+    <div class="bar2" role="toolbar" aria-label="Filtre">
+      <button data-f="viitoare" aria-pressed="true">Viitoare</button>
+      <button data-f="noua" aria-pressed="false">Noi</button>
+      <button data-f="confirmata" aria-pressed="false">Confirmate</button>
+      <button data-f="toate" aria-pressed="false">Toate</button>
+      <span class="sp"></span>
+      <span class="count" id="count"></span>
+      <button id="refresh" type="button">ReÃ®ncarcÄƒ</button>
+      <button id="logout" type="button">IeÈ™i</button>
+    </div>
+    <div id="list"></div>
+  </section>
+</main>
+<script src="config.js?v=9"></script>
+<script src="admin.js?v=9"></script>
+</body>
+</html>

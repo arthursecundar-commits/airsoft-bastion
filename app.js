@@ -160,7 +160,7 @@ function render() {
 
   const lines = [];
   lines.push(`Salut! ${nume ? 'Sunt ' + nume + '. ' : ''}Vrem să venim la airsoft.`);
-  lines.push(data ? `Ziua: ${data}, ${cand}.` : `Ziua: încă nu știm, ${cand} ne-ar conveni.`);
+  lines.push(data ? `Ziua: ${data}${cand ? ", " + cand : ""}.` : (cand ? `Ziua: încă nu știm, ${cand} ne-ar conveni.` : "Ziua: încă nu știm."));
   lines.push(`Suntem ${oameni(state.grup)}, toți de cel puțin 16 ani.`);
   if (state.chirie === 0) lines.push('Venim cu echipamentul nostru.');
   else if (state.chirie === state.grup) lines.push('Toți avem nevoie de echipament închiriat.');
@@ -204,4 +204,69 @@ const dock = document.querySelector('.dock');
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(es => es.forEach(e => dock.classList.toggle('hide', e.isIntersecting)), { threshold: .05 })
     .observe(document.getElementById('planifica'));
+}
+
+/* ---------- live booking: Google Apps Script + Google Sheet (config.js) ---------- */
+const API = (window.BASTION && window.BASTION.api) || '';
+const SLOT = { 'dimineața': '9-12', 'la prânz': '12-15', 'după-amiaza': '15-18' };
+const bookBtn = document.getElementById('book'), bookMsg = document.getElementById('bookMsg');
+const say = (t, kind) => { bookMsg.textContent = t; bookMsg.className = 'book-msg' + (kind ? ' ' + kind : ''); };
+
+if (API) {
+  bookBtn.hidden = false;
+  document.getElementById('wa').className = 'btn btn-dark';
+  document.getElementById('mail').className = 'btn btn-line';
+  fData.addEventListener('change', loadSlots);
+  bookBtn.addEventListener('click', submitBooking);
+}
+
+async function loadSlots(keepMsg) {
+  const d = fData.value, radios = [...form.querySelectorAll('input[name=cand]')];
+  radios.forEach(r => { r.disabled = false; r.parentElement.classList.remove('taken'); });
+  if (!d) return;
+  try {
+    const res = await (await fetch(`${API}?action=slots&from=${d}&to=${d}`)).json();
+    const taken = (res.taken && res.taken[d]) || [];
+    radios.forEach(r => {
+      if (taken.includes(SLOT[r.value])) { r.disabled = true; r.checked = false; r.parentElement.classList.add('taken'); }
+    });
+    if (!radios.some(r => r.checked)) { const free = radios.find(r => !r.disabled); if (free) free.checked = true; }
+    render();
+    if (keepMsg !== true) say(taken.length >= 3 ? 'Ziua e plină. Alege altă zi.' : '', taken.length >= 3 ? 'err' : '');
+  } catch { /* offline: the server checks again on submit */ }
+}
+
+async function submitBooking() {
+  const fd = new FormData(form), cand = fd.get('cand');
+  const p = {
+    action: 'book', data: fd.get('data'), interval: SLOT[cand], grup: state.grup, chirie: state.chirie,
+    experienta: fd.get('exp'), ocazie: fd.get('ocazie'), nume: (fd.get('nume') || '').trim(),
+    telefon: (fd.get('telefon') || '').trim(), email: (fd.get('email') || '').trim(),
+    mesaj: msgEl.textContent, acord: !!fd.get('acord'), website: fd.get('website') || ''
+  };
+  const miss = !p.data ? 'Alege ziua.' : !cand ? 'Alege intervalul.' : !p.nume ? 'Scrie-ți numele.'
+    : p.telefon.replace(/\D/g, '').length < 9 ? 'Scrie un număr de telefon valid.'
+    : !p.acord ? 'Bifează acordul pentru date.' : '';
+  if (miss) return say(miss, 'err');
+  bookBtn.disabled = true; say('Se trimite...', '');
+  try {
+    // plain-text body keeps this a "simple" request, so Apps Script needs no CORS preflight
+    const res = await (await fetch(API, { method: 'POST', body: JSON.stringify(p) })).json();
+    if (res.ok) {
+      say(`Cererea a ajuns la noi. Codul tău: ${res.id}. Te sunăm ca să confirmăm.`, 'ok');
+      bookBtn.textContent = 'Trimis';
+      loadSlots(true);
+      return;
+    }
+    const ERR = {
+      ocupat: 'Intervalul tocmai a fost rezervat. Alege altul.', data_trecuta: 'Alege o zi de mâine încolo.',
+      grup: 'Grupul trebuie să aibă între 8 și 16 persoane.', telefon: 'Numărul de telefon nu pare corect.',
+      acord: 'Bifează acordul pentru date.'
+    };
+    say(ERR[res.error] || 'Nu am putut trimite. Încearcă din nou sau sună-ne.', 'err');
+    if (res.error === 'ocupat') loadSlots(true);
+  } catch {
+    say('Nu am putut trimite. Verifică internetul sau sună-ne la 0733 358 456.', 'err');
+  }
+  bookBtn.disabled = false;
 }
