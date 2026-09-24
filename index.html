@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex">
+<title>Airsoft Bastion TGV - teren de airsoft outdoor lângă Târgoviște | Dragomirești, Dâmbovița</title>
+<meta name="description" content="Teren de airsoft outdoor în Dragomirești, lângă Târgoviște. Echipament de închiriat, pentru începători și experimentați. Program 9:00–18:00, doar cu rezervare, grupuri de 8–16 persoane, de la 16 ani. Rezervări la 0733 358 456." />
+<meta name="theme-color" content="#11140d" />
+<meta property="og:image" content="img/apus-cub.webp" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 29 7v9c0 7-6 12-13 14C9 28 3 23 3 16V7z' fill='%2311140d'/><path d='M16 6 25 9.5V16c0 5-4 8.5-9 10-5-1.5-9-5-9-10V9.5z' fill='%23f2c230'/></svg>" />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css?v=8" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Airsoft Bastion TGV",
+  "description": "Teren de airsoft outdoor. Echipament de închiriat, începători și experimentați.",
+  "telephone": "+40733358456",
+  "openingHours": "09:00-18:00",
+  "email": "airsoft.bastion.tgv@gmail.com",
+  "image": "img/apus-cub.webp",
+  "logo": "img/logo-ink.png",
+  "address": { "@type": "PostalAddress", "addressLocality": "Dragomirești", "addressRegion": "Dâmbovița", "addressCountry": "RO" },
+  "sameAs": ["https://www.facebook.com/p/Airsoft-Bastion-TGV-61593652887916/"]
+}
+</script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="brand" href="#top" aria-label="Airsoft Bastion TGV, început de pagină">
+    <img src="img/logo-y.png" alt="" width="34" height="34">
+    <span>Bastion <b>TGV</b></span>
+  </a>
+  <nav>
+    <a href="#teren">Terenul</a>
+    <a href="#foto">Foto</a>
+    <a href="#prima-data">Prima dată</a>
+    <a href="#planifica" class="nav-cta">Organizează un joc</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO: their own sunset photo of a BASTION cube -->
+  <section class="hero">
+    <img class="hero-photo" src="img/apus-cub.webp" alt="" width="1800" height="1350" fetchpriority="high">
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="cube">
+      <p class="stamp">Airsoft outdoor · Dâmbovița</p>
+      <h1><span class="stencil">Bastion</span><span class="tgv">TGV</span></h1>
+      <p class="hero-q">Vrei să încerci airsoftul?</p>
+      <p class="hero-a">Adu-ți prietenii: între 8 și 16 jucători, de la 16 ani în sus. Echipamentul îl poți închiria de la noi, iar regulile ți le explicăm pe teren, înainte de primul joc.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-y" href="#planifica">Organizează un joc</a>
+        <a class="btn btn-ghost" href="tel:+40733358456">Sună: 0733 358 456</a>
+      </div>
+    </div>
+    <p class="hero-loc" aria-hidden="true">Dragomirești · lângă Târgoviște<span class="dn"> · DN72A</span></p>
+  </section>
+
+  <!-- The four lines from their own Facebook intro, as tape labels -->
+  <section class="tapes" aria-label="Pe scurt">
+    <ul>
+      <li><span>01</span>Airsoft outdoor în Dâmbovița</li>
+      <li><span>02</span>Echipament de închiriat</li>
+      <li><span>03</span>Începători și experimentați</li>
+      <li><span>04</span>Rezervări în privat</li>
+    </ul>
+  </section>
+
+  <!-- SIGNATURE: the field as a tactical sketch -->
+  <section class="field" id="teren">
+    <div class="field-head">
+      <h2>Terenul, <em>văzut de sus</em></h2>
+      <p>Iarbă, plasă verde pe margine și tot ce vezi în pozele noastre: cuburile negre, cabanele pictate, butoaiele albastre, cauciucuri și paleți. Atinge un element ca să vezi la ce e bun.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="legend" role="toolbar" aria-label="Elemente de pe teren">
+        <button data-k="cub" aria-pressed="false"><i class="sw sw-cub"></i>Cuburi</button>
+        <button data-k="zid" aria-pressed="false"><i class="sw sw-zid"></i>Cabane pictate</button>
+        <button data-k="butoi" aria-pressed="false"><i class="sw sw-butoi"></i>Butoaie</button>
+        <button data-k="cauciuc" aria-pressed="false"><i class="sw sw-cauciuc"></i>Cauciucuri</button>
+        <button data-k="palet" aria-pressed="false"><i class="sw sw-palet"></i>Paleți</button>
+        <button data-k="baza" aria-pressed="false"><i class="sw sw-baza"></i>Baze</button>
+        <button data-k="plasa" aria-pressed="false"><i class="sw sw-plasa"></i>Plasa</button>
+      </div>
+
+      <figure class="map">
+        <div class="map3d" id="map3d"></div>
+        <p class="map3d-hint" aria-hidden="true">Trage ca să rotești terenul · atinge un obstacol</p>
+        <svg id="map" viewBox="0 0 1000 620" role="img" aria-labelledby="mapT">
+          <title id="mapT">Schiță a terenului Bastion TGV, văzut de sus</title>
+          <defs>
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M50 0H0V50" fill="none" stroke="#11140d" stroke-opacity=".07" stroke-width="1"/>
+            </pattern>
+            <pattern id="hatchA" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="4" height="10" fill="#2f6fd6" fill-opacity=".35"/>
+            </pattern>
+            <pattern id="hatchB" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+              <rect width="4" height="10" fill="#c8323c" fill-opacity=".35"/>
+            </pattern>
+            <pattern id="camoFill" width="160" height="160" patternUnits="userSpaceOnUse">
+              <image id="camoImg" width="160" height="160" href=""/>
+            </pattern>
+            <filter id="rough"><feTurbulence baseFrequency=".04" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+          </defs>
+
+          <rect width="1000" height="620" fill="#e8e1cb"/>
+          <rect width="1000" height="620" fill="url(#grid)"/>
+          <g id="grass" aria-hidden="true"></g>
+
+          <g class="axis" aria-hidden="true">
+            <text x="75" y="24">A</text><text x="175" y="24">B</text><text x="275" y="24">C</text><text x="375" y="24">D</text><text x="475" y="24">E</text>
+            <text x="575" y="24">F</text><text x="675" y="24">G</text><text x="775" y="24">H</text><text x="875" y="24">I</text>
+            <text x="14" y="105">1</text><text x="14" y="205">2</text><text x="14" y="305">3</text><text x="14" y="405">4</text><text x="14" y="505">5</text>
+          </g>
+
+          <g class="el" data-k="plasa">
+            <rect x="40" y="40" width="920" height="540" rx="6" fill="none" stroke="#3f6b2a" stroke-width="7" stroke-dasharray="2 9" stroke-linecap="round"/>
+            <rect x="40" y="40" width="920" height="540" rx="6" fill="none" stroke="#3f6b2a" stroke-opacity=".35" stroke-width="16"/>
+          </g>
+
+          <g class="el" data-k="baza">
+            <rect x="58" y="230" width="110" height="160" fill="url(#hatchA)" stroke="#2f6fd6" stroke-width="3"/>
+            <text class="lbl" x="113" y="318" fill="#1d4ea3">A</text>
+            <rect x="832" y="230" width="110" height="160" fill="url(#hatchB)" stroke="#b0242e" stroke-width="3"/>
+            <text class="lbl" x="887" y="318" fill="#9a1b24">B</text>
+          </g>
+
+          <g class="routes" aria-hidden="true">
+            <path class="route route-a" d="M168 300 C 240 290, 250 360, 330 350 S 430 300, 470 312"/>
+            <path class="route route-b" d="M832 320 C 760 330, 760 250, 680 262 S 580 310, 530 312"/>
+          </g>
+
+          <g class="el" data-k="zid" filter="url(#rough)">
+            <g transform="translate(385 125) rotate(6)"><rect x="-22" y="-17" width="44" height="34" fill="url(#camoFill)" stroke="#11140d" stroke-width="2"/><rect x="1" y="14" width="10" height="5" fill="#11140d"/><path d="M-22 -17 22 17M22 -17 -22 17" stroke="#11140d" stroke-opacity=".35" stroke-width="1"/></g>
+            <g transform="translate(640 499) rotate(-7)"><rect x="-22" y="-17" width="44" height="34" fill="url(#camoFill)" stroke="#11140d" stroke-width="2"/><rect x="1" y="14" width="10" height="5" fill="#11140d"/><path d="M-22 -17 22 17M22 -17 -22 17" stroke="#11140d" stroke-opacity=".35" stroke-width="1"/></g>
+            <g transform="translate(423 275) rotate(83)"><rect x="-22" y="-17" width="44" height="34" fill="url(#camoFill)" stroke="#11140d" stroke-width="2"/><rect x="1" y="14" width="10" height="5" fill="#11140d"/><path d="M-22 -17 22 17M22 -17 -22 17" stroke="#11140d" stroke-opacity=".35" stroke-width="1"/></g>
+            <g transform="translate(603 225) rotate(97)"><rect x="-22" y="-17" width="44" height="34" fill="url(#camoFill)" stroke="#11140d" stroke-width="2"/><rect x="1" y="14" width="10" height="5" fill="#11140d"/><path d="M-22 -17 22 17M22 -17 -22 17" stroke="#11140d" stroke-opacity=".35" stroke-width="1"/></g>
+          </g>
+
+          <g class="el" data-k="cub">
+            <g transform="translate(250 190)"><rect width="44" height="44" fill="#11140d"/><text class="cube-t" x="22" y="27">BASTION</text></g>
+            <g transform="translate(690 190)"><rect width="44" height="44" fill="#11140d"/><text class="cube-t" x="22" y="27">BASTION</text></g>
+            <g transform="translate(300 420)"><rect width="44" height="44" fill="#11140d"/><text class="cube-t" x="22" y="27">BASTION</text></g>
+            <g transform="translate(650 380)"><rect width="44" height="44" fill="#11140d"/><text class="cube-t" x="22" y="27">BASTION</text></g>
+          </g>
+
+          <g class="el" data-k="butoi">
+            <circle cx="478" cy="296" r="12" fill="#2a5db8" stroke="#11140d" stroke-width="2"/>
+            <circle cx="503" cy="290" r="12" fill="#2a5db8" stroke="#11140d" stroke-width="2"/>
+            <circle cx="526" cy="302" r="12" fill="#2a5db8" stroke="#11140d" stroke-width="2"/>
+            <circle cx="490" cy="320" r="12" fill="#2a5db8" stroke="#11140d" stroke-width="2"/>
+            <circle cx="516" cy="326" r="12" fill="#2a5db8" stroke="#11140d" stroke-width="2"/>
+            <g transform="translate(500 250)">
+              <line x1="0" y1="0" x2="0" y2="50" stroke="#11140d" stroke-width="3"/>
+              <rect x="1" y="0" width="10" height="20" fill="#0b3fa8"/><rect x="11" y="0" width="10" height="20" fill="#f2c230"/><rect x="21" y="0" width="10" height="20" fill="#c8102e"/>
+            </g>
+          </g>
+
+          <g class="el" data-k="cauciuc">
+            <g transform="translate(190 120)"><circle r="15" fill="none" stroke="#11140d" stroke-width="8"/><circle cx="26" cy="6" r="15" fill="none" stroke="#11140d" stroke-width="8"/></g>
+            <g transform="translate(760 110)"><circle r="15" fill="none" stroke="#11140d" stroke-width="8"/><circle cx="22" cy="20" r="15" fill="none" stroke="#11140d" stroke-width="8"/></g>
+            <g transform="translate(820 500)"><circle r="15" fill="none" stroke="#11140d" stroke-width="8"/><circle cx="-26" cy="4" r="15" fill="none" stroke="#11140d" stroke-width="8"/></g>
+            <g transform="translate(360 300)"><circle r="14" fill="none" stroke="#11140d" stroke-width="7"/></g>
+          </g>
+
+          <g class="el" data-k="palet">
+            <g transform="translate(150 470)"><rect width="70" height="44" fill="#b98a4e" stroke="#6b4a22" stroke-width="2"/><path d="M0 11H70M0 22H70M0 33H70" stroke="#6b4a22" stroke-width="2"/></g>
+            <g transform="translate(560 80) rotate(8)"><rect width="70" height="44" fill="#b98a4e" stroke="#6b4a22" stroke-width="2"/><path d="M0 11H70M0 22H70M0 33H70" stroke="#6b4a22" stroke-width="2"/></g>
+            <g transform="translate(740 290) rotate(-6)"><rect width="44" height="70" fill="#b98a4e" stroke="#6b4a22" stroke-width="2"/><path d="M11 0V70M22 0V70M33 0V70" stroke="#6b4a22" stroke-width="2"/></g>
+          </g>
+
+          <g class="compass" transform="translate(930 90)" aria-hidden="true">
+            <circle r="24" fill="#e8e1cb" stroke="#11140d" stroke-width="2"/>
+            <path d="M0-18 7 4H-7z" fill="#11140d"/><text y="17" text-anchor="middle">N</text>
+          </g>
+          <text class="note" x="960" y="604" text-anchor="end">Schiță, nu la scară. Aranjamentul real se schimbă de la joc la joc.</text>
+        </svg>
+      </figure>
+
+      <aside class="intel" aria-live="polite">
+        <p class="intel-k" id="intelK">Legendă</p>
+        <h3 id="intelH">Alege un element</h3>
+        <p id="intelP">Butoanele de deasupra aduc camera la fiecare tip de acoperire. Traseele punctate arată cum pleacă cele două echipe spre steag.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Real photos from their Facebook page -->
+  <section class="log" id="foto" aria-labelledby="fotoT">
+    <div class="log-head">
+      <h2 id="fotoT">Din teren</h2>
+      <p>Poze de la jocurile noastre din Dragomirești. Tot ce vezi pe teren mai sus există și arată exact așa.</p>
+    </div>
+    <div class="log-grid">
+      <figure class="g1"><img src="img/tarat-cub.webp" alt="Jucător târâș prin iarbă spre un cub negru marcat BASTION" loading="lazy" width="720" height="960"></figure>
+      <figure class="g2"><img src="img/apus-teren-sm.webp" srcset="img/apus-teren-sm.webp 675w, img/apus-teren.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Terenul la apus, cu plasa verde pe margine și un cub negru" loading="lazy" width="1350" height="1800"></figure>
+      <figure class="g3"><img src="img/colt-zid-sm.webp" srcset="img/colt-zid-sm.webp 675w, img/colt-zid.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Jucător la colțul unei cabane pictate în galben, verde și negru" loading="lazy" width="1350" height="1800"></figure>
+      <figure class="g4"><img src="img/butoaie-steag-sm.webp" srcset="img/butoaie-steag-sm.webp 675w, img/butoaie-steag.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Butoaie albastre stivuite, cu tricolorul lângă ele" loading="lazy" width="1350" height="1800"></figure>
+      <figure class="g5"><img src="img/plasa-camuflaj-sm.webp" srcset="img/plasa-camuflaj-sm.webp 675w, img/plasa-camuflaj.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Adăpost din lemn acoperit cu plasă de camuflaj, cu un jucător lângă el" loading="lazy" width="1350" height="1800"></figure>
+      <figure class="g6"><img src="img/cauciucuri-sm.webp" srcset="img/cauciucuri-sm.webp 506w, img/cauciucuri.webp 1012w" sizes="(max-width:640px) 50vw, 33vw" alt="Jucători care avansează pe lângă o linie de cauciucuri" loading="lazy" width="1012" height="1800"></figure>
+      <figure class="g7"><img src="img/steag-apus-sm.webp" srcset="img/steag-apus-sm.webp 675w, img/steag-apus.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Jucător lângă steag și butoaie, sub un cer de seară" loading="lazy" width="1350" height="1800"></figure>
+    </div>
+  </section>
+
+  <!-- First time: a route with checkpoints, not a card grid -->
+  <section class="first" id="prima-data">
+    <h2>Prima dată la airsoft?</h2>
+    <p class="first-lead">Nu trebuie să ai nimic și nu trebuie să știi nimic. Ai nevoie de un grup și de o zi liberă.</p>
+    <ul class="rules" aria-label="Regulile terenului">
+      <li><b>9:00–18:00</b><span>Program, doar cu rezervare</span></li>
+      <li><b>8–16</b><span>Jucători într-un grup</span></li>
+      <li><b>16+</b><span>Vârsta minimă, pentru fiecare jucător</span></li>
+      <li><b>Chirie</b><span>Echipament pe loc, pentru cine nu are</span></li>
+    </ul>
+    <ol class="route-steps">
+      <li>
+        <span class="cp">CP1</span>
+        <h3>Ne scrii sau ne suni</h3>
+        <p>Stabilim ziua, ora și câți aveți nevoie de echipament. Jucăm doar cu rezervare, între 9:00 și 18:00. Ne găsești la telefon, pe mesaj sau pe email.</p>
+      </li>
+      <li>
+        <span class="cp">CP2</span>
+        <h3>Ajungi la Dragomirești</h3>
+        <p>Terenul e lângă Târgoviște, pe DN72A. Locația exactă o primești când confirmăm jocul.</p>
+      </li>
+      <li>
+        <span class="cp">CP3</span>
+        <h3>Instructaj, apoi echipament</h3>
+        <p>Înainte de primul joc îți explicăm regulile de siguranță. Ochelarii de protecție nu se scot pe teren, nici o secundă.</p>
+      </li>
+      <li>
+        <span class="cp">CP4</span>
+        <h3>Jucați</h3>
+        <p>Ture scurte, pauze de apă între ele, echipe schimbate după fiecare rundă. Cele mai frumoase poze de pe teren ies spre apus.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- USEFUL INTERACTIVE: build the booking message -->
+  <section class="plan" id="planifica">
+    <div class="plan-head">
+      <h2>Organizează un&nbsp;joc</h2>
+      <p>Completează ce știi. Mesajul pentru noi se scrie singur, iar lista cu ce să aduceți se schimbă după răspunsurile tale.</p>
+    </div>
+
+    <figure class="plan-photo">
+      <img src="img/grup.webp" alt="Un grup întreg de jucători în fața unei cabane pictate, cu banderole albastre și roșii" loading="lazy" width="1800" height="1350">
+      <figcaption>Așa arată un grup plin: două echipe, banderole albastre și roșii.</figcaption>
+    </figure>
+
+    <div class="plan-grid">
+      <form class="plan-form" id="planForm" novalidate>
+        <label class="f">
+          <span>Ce zi v-ar conveni?</span>
+          <input type="date" name="data" id="fData" />
+        </label>
+
+        <fieldset class="f">
+          <legend>Când?</legend>
+          <div class="seg">
+            <label><input type="radio" name="cand" value="dimineața" checked /><span>Dimineața<small>9–12</small></span></label>
+            <label><input type="radio" name="cand" value="la prânz" /><span>La prânz<small>12–15</small></span></label>
+            <label><input type="radio" name="cand" value="după-amiaza" /><span>După-amiaza<small>15–18</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="f two">
+          <div class="step">
+            <span>Câți sunteți? (8–16)</span>
+            <div class="stepper" data-for="grup">
+              <button type="button" data-d="-1" aria-label="Mai puțini">&minus;</button>
+              <output id="oGrup">8</output>
+              <button type="button" data-d="1" aria-label="Mai mulți">+</button>
+            </div>
+          </div>
+          <div class="step">
+            <span>Câți închiriază echipament?</span>
+            <div class="stepper" data-for="chirie">
+              <button type="button" data-d="-1" aria-label="Mai puțini">&minus;</button>
+              <output id="oChirie">8</output>
+              <button type="button" data-d="1" aria-label="Mai mulți">+</button>
+            </div>
+          </div>
+        </div>
+
+        <fieldset class="f">
+          <legend>Cât de des ați jucat?</legend>
+          <div class="seg">
+            <label><input type="radio" name="exp" value="prima" checked /><span>Niciodată</span></label>
+            <label><input type="radio" name="exp" value="cativa" /><span>Unii dintre noi</span></label>
+            <label><input type="radio" name="exp" value="echipa" /><span>Suntem echipă</span></label>
+          </div>
+        </fieldset>
+
+        <label class="f">
+          <span>Cu ce ocazie?</span>
+          <select name="ocazie" id="fOcazie">
+            <option value="">Doar de distracție</option>
+            <option>Zi de naștere</option>
+            <option>Team building</option>
+            <option>Petrecerea burlacilor</option>
+            <option>Antrenament de echipă</option>
+          </select>
+        </label>
+
+        <label class="f">
+          <span>Numele tău</span>
+          <input type="text" name="nume" id="fNume" autocomplete="given-name" placeholder="ca să știm cui răspundem" />
+        </label>
+      </form>
+
+      <div class="order">
+        <div class="slip">
+          <p class="slip-k">Mesaj pentru Bastion TGV</p>
+          <pre id="msg"></pre>
+          <div class="slip-ctas">
+            <a class="btn btn-y" id="wa" target="_blank" rel="noopener">Trimite pe WhatsApp</a>
+            <a class="btn btn-dark" id="mail">Trimite pe email</a>
+            <button class="btn btn-line" id="copy" type="button">Copiază</button>
+          </div>
+          <p class="slip-alt">Sau sună direct: <a href="tel:+40733358456">0733 358 456</a></p>
+        </div>
+
+        <div class="kit">
+          <p class="slip-k">Ce aduceți</p>
+          <ul id="kit"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <canvas class="camo" id="footCamo" aria-hidden="true"></canvas>
+  <div class="foot-in">
+    <p class="foot-big"><a href="tel:+40733358456">0733 358 456</a></p>
+    <ul class="foot-list">
+      <li><a href="mailto:airsoft.bastion.tgv@gmail.com">airsoft.bastion.tgv@gmail.com</a></li>
+      <li><a href="https://www.facebook.com/p/Airsoft-Bastion-TGV-61593652887916/" target="_blank" rel="noopener">Facebook: Airsoft Bastion TGV</a></li>
+      <li>Dragomirești, județul Dâmbovița, lângă Târgoviște</li>
+    </ul>
+    <p class="foot-fine">Airsoft Bastion TGV · Airsoft outdoor în Dâmbovița</p>
+  </div>
+</footer>
+
+<a class="dock" href="#planifica">Organizează un joc</a>
+
+<script src="app.js?v=8"></script>
+<script type="module" src="field3d.js?v=8"></script>
+</body>
+</html>
