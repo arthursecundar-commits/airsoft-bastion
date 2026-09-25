@@ -10,7 +10,7 @@
 <meta property="og:image" content="img/apus-cub.webp" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 29 7v9c0 7-6 12-13 14C9 28 3 23 3 16V7z' fill='%2311140d'/><path d='M16 6 25 9.5V16c0 5-4 8.5-9 10-5-1.5-9-5-9-10V9.5z' fill='%23f2c230'/></svg>" />
 <link rel="stylesheet" href="fonts.css" />
-<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="stylesheet" href="styles.css?v=10" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -332,6 +332,11 @@
           <input type="checkbox" name="acord" id="fAcord" />
           <span>Sunt de acord ca numele și telefonul meu să fie folosite doar pentru această rezervare.</span>
         </label>
+
+        <div class="book-wrap">
+          <button class="btn btn-y btn-book" id="book" type="button" hidden>Trimite rezervarea</button>
+          <p class="book-msg" id="bookMsg" role="status" aria-live="polite"></p>
+        </div>
       </form>
 
       <div class="order">
@@ -339,12 +344,10 @@
           <p class="slip-k">Mesaj pentru Bastion TGV</p>
           <pre id="msg"></pre>
           <div class="slip-ctas">
-            <button class="btn btn-y btn-book" id="book" type="button" hidden>Trimite rezervarea</button>
             <a class="btn btn-y" id="wa" target="_blank" rel="noopener">Trimite pe WhatsApp</a>
             <a class="btn btn-dark" id="mail">Trimite pe email</a>
             <button class="btn btn-line" id="copy" type="button">Copiază</button>
           </div>
-          <p class="book-msg" id="bookMsg" role="status" aria-live="polite"></p>
           <p class="slip-alt">Sau sună direct: <a href="tel:+40733358456">0733 358 456</a></p>
         </div>
 
@@ -373,8 +376,8 @@
 
 <a class="dock" href="#planifica">Organizează un joc</a>
 
-<script src="config.js?v=9"></script>
-<script src="app.js?v=9"></script>
-<script type="module" src="field3d.js?v=9"></script>
+<script src="config.js?v=10"></script>
+<script src="app.js?v=10"></script>
+<script type="module" src="field3d.js?v=10"></script>
 </body>
 </html>

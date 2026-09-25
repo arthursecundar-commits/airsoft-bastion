@@ -147,7 +147,7 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .f{display:grid;gap:8px;border:0;margin:0;padding:0;min-width:0}
 .f>span,.f legend,.step>span{font:600 13px/1.2 var(--hud);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);padding:0;margin-bottom:8px}
 .f legend{margin-bottom:8px}
-.f input[type=date],.f input[type=text],.f select{width:100%;min-height:50px;padding:12px 14px;background:var(--ink);color:var(--paper-2);border:1px solid #3b4430;border-radius:0;font:16px var(--body);color-scheme:dark}
+.f input[type=date],.f input[type=text],.f input[type=tel],.f input[type=email],.f select{width:100%;min-height:50px;padding:12px 14px;background:var(--ink);color:var(--paper-2);border:1px solid #3b4430;border-radius:0;font:16px var(--body);color-scheme:dark}
 .f input:focus,.f select:focus{border-color:var(--yellow);outline:none}
 .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #3b4430}
 .seg label{position:relative;cursor:pointer}
@@ -294,7 +294,8 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .consent input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--yellow)}
 .seg label.taken span{opacity:.35;text-decoration:line-through;cursor:not-allowed}
 .seg label.taken span::after{content:"ocupat";display:block;font:600 10px/1 var(--hud);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;text-decoration:none}
-.btn-book{flex-basis:100%!important}
+.btn-book{width:100%;min-height:58px;font-size:15px}
+.book-wrap .book-msg{margin-top:12px}
 .btn[disabled]{opacity:.6;cursor:wait}
 .book-msg{margin:12px 0 0;font:600 14px/1.4 var(--hud);min-height:0}
 .book-msg:empty{display:none}
