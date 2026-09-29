@@ -62,7 +62,7 @@ const svgNS = 'http://www.w3.org/2000/svg';
   const g = document.getElementById('grass');
   const r = rng(31);
   for (let i = 0; i < 260; i++) {
-    const x = 50 + r() * 900, y = 50 + r() * 520;
+    const x = 50 + r() * 900, y = 50 + r() * 870;
     const p = document.createElementNS(svgNS, 'path');
     p.setAttribute('d', `M${x.toFixed(1)} ${y.toFixed(1)}l2 -7m2 7l-1 -6m3 6l3 -5`);
     p.setAttribute('stroke', '#5f7a36');
@@ -74,13 +74,14 @@ const svgNS = 'http://www.w3.org/2000/svg';
 })();
 
 const INTEL = {
-  cub:     ['Acoperire', 'Cuburile negre', 'Cuburile marcate BASTION, pe care le vezi în mai toate pozele noastre. Acoperire solidă, bună de ținut o poziție cât echipa ta avansează.'],
-  zid:     ['Acoperire', 'Cabanele pictate', 'Cabane mici din lemn, vopsite în galben, verde și negru, cu plasă pe acoperiș. Acoperire de toate părțile, cu ușă și geam.'],
-  butoi:   ['Obiectiv', 'Butoaiele albastre', 'Grupul de butoaie albastre, cu tricolorul înfipt lângă ele în pozele de pe teren. Cine ajunge primul aici are mijlocul terenului.'],
-  cauciuc: ['Acoperire joasă', 'Cauciucurile', 'Stive de cauciucuri. Acoperire joasă: stai în genunchi, nu în picioare.'],
-  palet:   ['Acoperire rapidă', 'Paleții', 'Stive de paleți de lemn, bune pentru un salt rapid între două poziții.'],
-  baza:    ['Start', 'Cele două baze', 'Fiecare echipă pleacă din capătul ei de teren. Vă deosebiți după banderolă, albastră sau roșie, ca să știi în cine nu tragi.'],
-  plasa:   ['Limită', 'Plasa verde', 'Plasa de pe margine închide terenul. Tot ce e înăuntru e joc, tot ce e afară e pauză.']
+  casa:    ['Centru', 'Casa din mijloc', 'Șase camere fără acoperiș, pereți pictați galben cu negru și plasă deasupra. Stă chiar în centru, în linie cu cele două plase, și e de obicei miza jocului.'],
+  zid:     ['Acoperire', 'Buncărele 1A–4A și 1B–4B', 'Opt buncăre din paleți și placaj pictat, cu numărul pe ele. Echipa A are patru pe partea dinspre drum, echipa B patru dinspre porumb, așezate în oglindă: 1A e în locul lui 1B, întors cu jumătate de tură.'],
+  cub:     ['Acoperire', 'Lăzile negre', 'Lăzi negre cu stele, între buncăre și casă. Două, la capetele plaselor, au WAR scris cu roșu. Acoperire solidă cât stai în genunchi.'],
+  butoi:   ['Acoperire', 'Butoaiele', 'Butoaie albastre, câte două, plus butoiul negru marcat SOS de lângă casă.'],
+  cauciuc: ['Acoperire joasă', 'Cauciucurile', 'Stive de cauciucuri, unele pe paleți chiar în fața bazelor, și grămezi lipite de casă. Acoperire joasă: stai în genunchi, nu în picioare.'],
+  palet:   ['Acoperire rapidă', 'Lemnul', 'Lăzi de lemn, panouri de placaj pe picioare, ziduri din paleți în formă de U și lăzi joase sub plasă de camuflaj. Bune pentru un salt rapid între două poziții.'],
+  baza:    ['Start', 'Cele două baze', 'Fiecare echipă pleacă din adăpostul de paleți de la capătul ei: A dinspre drum, B dinspre porumb. Vă deosebiți după banderolă, albastră sau roșie, ca să știi în cine nu tragi.'],
+  plasa:   ['Limită', 'Plasa verde', 'Plasa de pe margine închide terenul, gardul viu îl închide la capăt. Cele două plase din mijloc, în linie cu casa, împart terenul în două jumătăți.']
 };
 const map = document.querySelector('.map');
 const legendBtns = document.querySelectorAll('.legend button');
