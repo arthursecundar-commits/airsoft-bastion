@@ -52,7 +52,7 @@ img,svg,canvas{display:block;max-width:100%}
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center end;padding:110px var(--gut) 90px;overflow:hidden;isolation:isolate}
 .camo{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 60%;z-index:-2}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 72%;z-index:-2}
 .hero-grain{position:absolute;inset:0;z-index:-1;
   background:
     linear-gradient(270deg, rgba(17,20,13,.6), rgba(17,20,13,.05) 65%),
@@ -267,7 +267,7 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .log-grid figure:hover img{transform:scale(1.04)}
 .log-grid figcaption{position:absolute;left:10px;bottom:10px;padding:6px 10px;background:var(--yellow);color:var(--ink);font:700 12px/1.1 var(--hud);letter-spacing:.08em;text-transform:uppercase}
 .g1{grid-area:a}.g2{grid-area:b}.g3{grid-area:c}.g4{grid-area:d}.g5{grid-area:e}.g6{grid-area:f}
-.g7{grid-area:g}.g7 img{object-position:50% 38%}
+.g7{grid-area:g}.g7 img{object-position:50% 60%}
 .plan-photo{max-width:1180px;margin:0 auto 36px;position:relative}
 .plan-photo img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;object-position:50% 58%}
 .plan-photo figcaption{position:absolute;left:0;bottom:0;padding:10px 14px;background:var(--ink);color:var(--paper-2);font:600 14px/1.3 var(--hud);letter-spacing:.04em;max-width:90%}
@@ -283,7 +283,7 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 /* ---------- phone hero: photo first, framed on the player at the cube, card below ---------- */
 @media (max-width:640px){
   .hero{display:block;min-height:0;padding:0 0 28px;background:var(--ink)}
-  .hero-photo{position:relative;inset:auto;display:block;width:100%;height:62svh;min-height:340px;object-position:24% 70%;z-index:auto}
+  .hero-photo{position:relative;inset:auto;display:block;width:100%;height:62svh;min-height:340px;object-position:22% 72%;z-index:auto}
   .hero-grain{inset:0 0 auto;height:62svh;min-height:340px;background:linear-gradient(180deg, rgba(17,20,13,.55) 0, transparent 22%, transparent 70%, var(--ink) 100%)}
   .cube{margin:-56px 16px 0;width:auto;max-width:none}
   .hero-loc{position:static;margin:18px auto 0}
