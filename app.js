@@ -271,3 +271,12 @@ async function submitBooking() {
   }
   bookBtn.disabled = false;
 }
+
+/* ---------- hero video: muted loop, paused off screen; the poster stays for reduced motion and data saver ---------- */
+const heroVid = document.querySelector('.hero-video');
+if (heroVid && !matchMedia('(prefers-reduced-motion: reduce)').matches && !(navigator.connection && navigator.connection.saveData)) {
+  // AV1 where the browser can decode it (sharper at the same size), H.264 for the rest
+  const av1 = heroVid.canPlayType('video/mp4; codecs="av01.0.08M.08"') ? '-av1' : '';
+  heroVid.src = `video/hero-${matchMedia('(max-width: 640px)').matches ? 'phone' : 'desktop'}${av1}.mp4`;
+  new IntersectionObserver(([e]) => { if (e.isIntersecting) heroVid.play().catch(() => {}); else heroVid.pause(); }).observe(heroVid);
+}

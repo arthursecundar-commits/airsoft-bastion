@@ -318,3 +318,4 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .legal .fill{background:rgba(242,194,48,.18);padding:0 4px}
 .bk{font:700 11px var(--hud);fill:#f4efe2;text-anchor:middle}
 .edge{font:700 13px var(--hud);letter-spacing:.14em;text-transform:uppercase;fill:#11140d;fill-opacity:.55;text-anchor:middle}
+.hero-video{object-position:50% 50%!important}
