@@ -73,20 +73,8 @@ const svgNS = 'http://www.w3.org/2000/svg';
   }
 })();
 
-const INTEL = {
-  casa:    ['Centru', 'Casa din mijloc', 'Șase camere fără acoperiș, pereți pictați galben cu negru și plasă deasupra. Stă chiar în centru, în linie cu cele două plase, și e de obicei miza jocului.'],
-  zid:     ['Acoperire', 'Buncărele 1A–4A și 1B–4B', 'Opt buncăre din paleți și placaj pictat, cu numărul pe ele. Echipa A are patru pe partea dinspre drum, echipa B patru dinspre porumb, așezate în oglindă: 1A e în locul lui 1B, întors cu jumătate de tură.'],
-  cub:     ['Acoperire', 'Lăzile negre', 'Lăzi negre cu stele, între buncăre și casă. Două, la capetele plaselor, au WAR scris cu roșu. Acoperire solidă cât stai în genunchi.'],
-  butoi:   ['Acoperire', 'Butoaiele', 'Butoaie albastre, câte două, plus butoiul negru marcat SOS de lângă casă.'],
-  cauciuc: ['Acoperire joasă', 'Cauciucurile', 'Stive de cauciucuri, unele pe paleți chiar în fața bazelor, și grămezi lipite de casă. Acoperire joasă: stai în genunchi, nu în picioare.'],
-  palet:   ['Acoperire rapidă', 'Lemnul', 'Lăzi de lemn, panouri de placaj pe picioare, ziduri din paleți în formă de U și lăzi joase sub plasă de camuflaj. Bune pentru un salt rapid între două poziții.'],
-  baza:    ['Start', 'Cele două baze', 'Fiecare echipă pleacă din adăpostul de paleți de la capătul ei: A dinspre drum, B dinspre porumb. Vă deosebiți după banderolă, albastră sau roșie, ca să știi în cine nu tragi.'],
-  plasa:   ['Limită', 'Plasa verde', 'Plasa de pe margine închide terenul, gardul viu îl închide la capăt. Cele două plase din mijloc, în linie cu casa, împart terenul în două jumătăți.']
-};
 const map = document.querySelector('.map');
 const legendBtns = document.querySelectorAll('.legend button');
-const intelK = document.getElementById('intelK'), intelH = document.getElementById('intelH'), intelP = document.getElementById('intelP');
-const defaultIntel = [intelK.textContent, intelH.textContent, intelP.textContent];
 let active = null;
 
 function focusEl(k) {
@@ -94,8 +82,6 @@ function focusEl(k) {
   legendBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === active)));
   map.classList.toggle('focus', !!active);
   document.querySelectorAll('#map .el').forEach(g => g.classList.toggle('on', g.dataset.k === active));
-  const [k2, h, p] = active ? INTEL[active] : defaultIntel;
-  intelK.textContent = k2; intelH.textContent = h; intelP.textContent = p;
   document.dispatchEvent(new CustomEvent("fieldfocus", { detail: active }));
 }
 window.focusEl = focusEl;
