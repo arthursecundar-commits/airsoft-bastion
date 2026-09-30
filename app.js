@@ -200,6 +200,9 @@ const bookBtn = document.getElementById('book'), bookMsg = document.getElementBy
 const say = (t, kind) => { bookMsg.textContent = t; bookMsg.className = 'book-msg' + (kind ? ' ' + kind : ''); };
 
 if (API) {
+  // same window as the server (Code.gs MAX_DAYS_AHEAD): tomorrow to 90 days ahead
+  const iso = d => new Date(Date.now() + d * 864e5 - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+  fData.min = iso(1); fData.max = iso(90);
   bookBtn.hidden = false;
   document.getElementById('wa').className = 'btn btn-dark';
   document.getElementById('mail').className = 'btn btn-line';
@@ -248,7 +251,9 @@ async function submitBooking() {
     const ERR = {
       ocupat: 'Intervalul tocmai a fost rezervat. Alege altul.', data_trecuta: 'Alege o zi de mâine încolo.',
       grup: 'Grupul trebuie să aibă între 8 și 16 persoane.', telefon: 'Numărul de telefon nu pare corect.',
-      acord: 'Bifează acordul pentru date.'
+      acord: 'Bifează acordul pentru date.', data_departe: 'Poți rezerva cu cel mult 90 de zile înainte.',
+      limita_telefon: 'Ai deja două cereri în așteptare. Te sunăm noi să le confirmăm.',
+      limita: 'Am primit multe cereri azi. Sună-ne la 0733 358 456 și rezolvăm pe loc.'
     };
     say(ERR[res.error] || 'Nu am putut trimite. Încearcă din nou sau sună-ne.', 'err');
     if (res.error === 'ocupat') loadSlots(true);
