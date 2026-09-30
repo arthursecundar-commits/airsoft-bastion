@@ -316,3 +316,7 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .bk{font:700 11px var(--hud);fill:#f4efe2;text-anchor:middle}
 .edge{font:700 13px var(--hud);letter-spacing:.14em;text-transform:uppercase;fill:#11140d;fill-opacity:.55;text-anchor:middle}
 .hero-video{object-position:50% 50%!important}
+.book-terms{margin:10px 0 0;font-size:13px;color:#b9b4a4}
+.book-terms a{color:var(--yellow)}
+.legal ul{margin:0 0 12px;padding-left:20px}
+.legal li{margin:0 0 6px}
