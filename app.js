@@ -199,6 +199,7 @@ const SLOT = { 'dimineața': '9-12', 'la prânz': '12-15', 'după-amiaza': '15-1
 const bookBtn = document.getElementById('book'), bookMsg = document.getElementById('bookMsg');
 const say = (t, kind) => { bookMsg.textContent = t; bookMsg.className = 'book-msg' + (kind ? ' ' + kind : ''); };
 
+if (!API) document.querySelectorAll('.online-only').forEach(el => (el.hidden = true));
 if (API) {
   // same window as the server (Code.gs MAX_DAYS_AHEAD): tomorrow to 90 days ahead
   const iso = d => new Date(Date.now() + d * 864e5 - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);

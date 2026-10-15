@@ -10,7 +10,7 @@
 <meta property="og:image" content="img/hero-echipa-sm.webp" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 29 7v9c0 7-6 12-13 14C9 28 3 23 3 16V7z' fill='%2311140d'/><path d='M16 6 25 9.5V16c0 5-4 8.5-9 10-5-1.5-9-5-9-10V9.5z' fill='%23f2c230'/></svg>" />
 <link rel="stylesheet" href="fonts.css" />
-<link rel="stylesheet" href="styles.css?v=29" />
+<link rel="stylesheet" href="styles.css?v=30" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,7 +35,6 @@
     <span>Bastion <b>TGV</b></span>
   </a>
   <nav>
-    <a href="#teren">Terenul</a>
     <a href="#foto">Foto</a>
     <a href="#prima-data">Prima dată</a>
     <a href="#planifica" class="nav-cta">Organizează un joc</a>
@@ -72,7 +71,8 @@
   </section>
 
   <!-- SIGNATURE: the field as a tactical sketch -->
-  <section class="field" id="teren">
+  <!-- 3D map suspended 2026-10-15: remove "hidden" and restore the field3d.js script below to bring it back -->
+  <section class="field" id="teren" hidden>
     <div class="field-head">
       <h2>Terenul, <em>văzut de sus</em></h2>
       <p>Un teren în aer liber, cu plasă pe margine, o casă în mijloc și acoperire pentru fiecare echipă. Rotește-l și uită-te de aproape.</p>
@@ -136,7 +136,7 @@
   <section class="log" id="foto" aria-labelledby="fotoT">
     <div class="log-head">
       <h2 id="fotoT">Din teren</h2>
-      <p>Poze de la jocurile noastre din Dragomirești. Tot ce vezi pe teren mai sus există și arată exact așa.</p>
+      <p>Poze de la jocurile noastre din Dragomirești: echipamentul, echipele și terenul, așa cum arată.</p>
     </div>
     <div class="log-grid">
       <figure class="g1"><img src="img/echipament-inchiriat-sm.webp" srcset="img/echipament-inchiriat-sm.webp 675w, img/echipament-inchiriat.webp 1350w" sizes="(max-width:640px) 50vw, 33vw" alt="Jucător cu replica în mână, în fața rastelului cu echipament de închiriat" loading="lazy" width="1350" height="1800"></figure>
@@ -255,7 +255,7 @@
           <input type="text" name="nume" id="fNume" autocomplete="name" placeholder="ca să știm cui răspundem" />
         </label>
 
-        <div class="f two">
+        <div class="f two online-only">
           <label class="f">
             <span>Telefon</span>
             <input type="tel" name="telefon" id="fTel" autocomplete="tel" inputmode="tel" placeholder="07xx xxx xxx" />
@@ -268,12 +268,12 @@
 
         <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
 
-        <label class="consent">
+        <label class="consent online-only">
           <input type="checkbox" name="acord" id="fAcord" />
           <span>Sunt de acord ca numele și telefonul meu să fie folosite doar pentru această rezervare. <a href="confidentialitate.html" target="_blank">Cum folosim datele</a></span>
         </label>
 
-        <div class="book-wrap">
+        <div class="book-wrap online-only">
           <button class="btn btn-y btn-book" id="book" type="button" hidden>Trimite rezervarea</button>
           <p class="book-terms">Trimiți o cerere, nu o rezervare confirmată: te sunăm noi. Prin trimitere accepți <a href="termeni.html" target="_blank">Termenii și condițiile</a>.</p>
           <p class="book-msg" id="bookMsg" role="status" aria-live="polite"></p>
@@ -322,8 +322,8 @@
 
 <a class="dock" href="#planifica">Organizează un joc</a>
 
-<script src="config.js?v=29"></script>
-<script src="app.js?v=29"></script>
-<script type="module" src="field3d.js?v=29"></script>
+<script src="config.js?v=30"></script>
+<script src="app.js?v=30"></script>
+<!-- <script type="module" src="field3d.js?v=30"></script> -->
 </body>
 </html>
