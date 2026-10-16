@@ -324,3 +324,6 @@ h1{display:flex;align-items:flex-end;gap:.18em;flex-wrap:wrap;line-height:.84}
 .call{background:var(--paper-2);color:var(--ink);padding:26px 24px;display:grid;gap:14px;align-content:start;justify-items:start}
 .call-num{font:400 clamp(44px,6vw,72px)/.95 var(--display);color:var(--ink);text-decoration:none;letter-spacing:.01em}
 .call-hours{margin:0;color:#3a4130}
+/* legal links in the menu: wide screens only, the footer has them everywhere */
+.bar nav a{white-space:nowrap}
+@media (max-width:1000px){ .bar nav .nav-legal{display:none} }
